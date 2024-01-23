@@ -4,7 +4,7 @@ body {
 }
 
 #menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   padding: 3.5vh 5vw 1vw 1vw;
@@ -48,14 +48,14 @@ h1:hover {
   cursor: pointer;
 }
 
-.btn:not(#contact)::before {
+.btn:not(#contact, #home)::before {
   content: "";
   position: absolute;
   left: 2rem;
   bottom: 0;
-  height: 2px;
+  height: 3px;
   width: 30%;
-  background-color: #e7d1c9;
+  background-color: #b8a49d;
   transition: 0.3s ease;
 }
 
@@ -68,9 +68,9 @@ h1:hover {
   position: absolute;
   left: 2rem;
   bottom: 0;
-  height: 1px;
+  height: 2px;
   width: 0;
-  background-color: #e7d1c9;
+  background-color: #b8a49d;
   transition: 0.3s ease;
 }
 
@@ -78,126 +78,87 @@ h1:hover {
   width: 30%;
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  padding-left: 2vw;
-}
-.search__input {
-  font-family: inherit;
-  font-size: 1.2vw;
-  background-color: #faf8f8;
-  border: none;
-  color: #625f5f;
-  padding: 0.7rem 1rem;
-  border-radius: 30px;
-  width: 13em;
-  transition: all ease-in-out 0.5s;
-  margin-right: -2rem;
-}
-
-.search__input:hover,
-.search__input:focus {
-  box-shadow: 0 0 1em #0000003f;
-}
-
-.search__input:focus {
-  outline: none;
-  background-color: #f0eeee;
-}
-
-.search__input::-webkit-input-placeholder {
-  font-weight: 100;
-  color: #625f5f;
-}
-
-.search__input:focus + .search__button {
-  background-color: #f0eeee;
-}
-
-.search__button {
-  border: none;
-  background-color: #faf8f8;
-  margin-top: 0.1em;
-}
-
-.search__button:hover {
-  cursor: pointer;
-}
-
-.search__icon {
-  height: 1.3em;
-  width: 1.3em;
-  fill: #625f5f;
-}
-
 /* -------------------------------------------------------- */
-
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -3em;
+.leftItem {
+  grid-area: main;
+  margin-top: -50px;
+}
+.rightItem {
+  grid-area: right;
+  margin-top: 30px;
 }
 
-.title {
-  font-family: "Poppins", sans-serif;
-  position: fixed;
-  font-size: 45px;
-  margin-top: 470px;
+.grid-container {
+  display: grid;
+  grid-template-areas: "main main right right right";
+  /* background-color: #2196f3; */
+  gap: 5px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+h1 {
+  text-align: center;
+  line-height: 100px;
+  font-size: 50px;
 }
 h2 {
-  font-family: "Poppins", sans-serif;
-  position: fixed;
-  font-size: 28px;
-  margin-top: 380px;
+  font-size: 35px;
 }
-
-.background-box {
-  position: fixed;
-  height: 300px;
-  width: 1100px;
-  margin-top: 1000px;
-  background-color: #f6f2f0;
-  border-radius: 30px;
-}
-
-/* -------------------------------------------------------- */
 
 .slideshow-container {
-  position: absolute;
-  margin-top: 1000px;
-  left: 450px;
-  right: 450px;
-  color: white;
-  text-align: center;
-  z-index: 1;
+  text-align: justify;
+  max-width: 70%;
+  margin-left: 100px;
 }
 
-.slideshow-container p {
-  font-size: 20px;
-  font-weight: 100;
-  margin: 2.5em 0 0.5em 0;
-  color: #424242;
+.slideshow-container > h2 {
+  font-size: 25px;
 }
 
-.slideshow-container h1 {
-  color: #1f1f1f;
+.slideshow-container > p {
+  font-size: 18px;
+  line-height: 30px;
+  text-indent: 20px;
+  margin-bottom: 40px;
+  margin-top: -15px;
 }
 
-a {
-  text-decoration: none;
+.long {
+  margin-bottom: 50px;
+}
+
+div.polaroid {
+  width: 22%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
   display: inline-block;
-  font-size: 40px;
-  margin: 20px;
-  color: #1f1f1f;
 }
 
-a:hover {
-  color: #8f7c6d;
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
 }
 
-.round {
-  border-radius: 50%;
+.container > h5 {
+  line-height: 1em;
+  font-size: 1.5em;
+  margin-bottom: -20px;
+}
+.container > h6 {
+  color: #999;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.rightItem > h2 {
+  margin-top: 15px;
 }

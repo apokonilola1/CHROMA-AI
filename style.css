@@ -62,7 +62,7 @@ body {
   width: 30%;
 }
 
-.search {
+/* .search {
   display: flex;
   align-items: center;
   padding-left: 2vw;
@@ -113,7 +113,7 @@ body {
   height: 1.3em;
   width: 1.3em;
   fill: #625f5f;
-}
+} */
 
 /* -------------------------------------------------------- */
 .container {

@@ -1,84 +1,107 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const categories = document.querySelectorAll(".category");
-  const templateBoxes = document.querySelectorAll(".template-box");
+  // Get all category buttons and SVG elements
+  const categoryButtons = document.querySelectorAll(".category");
+  const svgElements = document.querySelectorAll("svg");
+  const templateBox = document.querySelector(".template-box");
 
-  categories.forEach((category) => {
-    category.addEventListener("click", function () {
-      // Reset styles for all categories
-      categories.forEach((cat) => {
-        cat.style.color = "black";
-        cat.style.backgroundColor = "#949494";
+  // Add click event listener to each category button
+  categoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Reset styles for all buttons
+      categoryButtons.forEach((btn) => {
+        btn.style.color = "#000000";
+        btn.style.backgroundColor = "#f1e7dd";
       });
 
-      // Hide all template boxes
-      templateBoxes.forEach((box) => {
-        box.style.display = "none";
+      // Set styles for the clicked button
+      button.style.color = "#f0f0f0";
+      button.style.backgroundColor = "#cfb79e";
+
+      const categoryId = button.id;
+
+      // Show/hide SVG elements based on the selected category
+      svgElements.forEach((svg) => {
+        if (categoryId === "all" || svg.classList.contains(categoryId)) {
+          svg.style.display = "inline-block";
+        } else {
+          svg.style.display = "none";
+        }
       });
 
-      if (category.textContent === "All Designs") {
-        categories.forEach((cat) => {
-          cat.style.color = "white";
-          cat.style.backgroundColor = "#625f5f";
-        });
-        templateBoxes.forEach((box) => {
-          box.style.display = "inline-block";
-        });
+      // Center the displayed SVGs horizontally
+      if (categoryId !== "all") {
+        templateBox.style.textAlign = "center";
       } else {
-        // Show the selected category
-        category.style.color = "white";
-        category.style.backgroundColor = "#625f5f";
-        const className = category.textContent.toLowerCase(); // Convert category name to lowercase
-        const selectedTemplates = document.querySelectorAll(`.${className}`);
-
-        selectedTemplates.forEach((template) => {
-          template.style.display = "inline-block";
-        });
+        templateBox.style.textAlign = ""; // Reset to default if "All" is selected
       }
-
-      // if (category.textContent === "Branding") {
-      //   // Handle Branding category
-      //   category.style.color = "white";
-      //   category.style.backgroundColor = "#625f5f";
-      //   document.querySelectorAll(".t1, .t6").forEach((box) => {
-      //     box.style.display = "inline-block";
-      //   });
-      // }
-
-      // if (category.textContent === "Illustration") {
-      //   // Handle Illustration category
-      //   category.style.color = "white";
-      //   category.style.backgroundColor = "#625f5f";
-      //   document.querySelectorAll(".t3, .t5").forEach((box) => {
-      //     box.style.display = "inline-block";
-      //   });
-      // }
-
-      // if (category.textContent === "Mobile/Web UI") {
-      //   // Handle Mobile/Web UI category
-      //   category.style.color = "white";
-      //   category.style.backgroundColor = "#625f5f";
-      //   document.querySelectorAll(".t2").forEach((box) => {
-      //     box.style.display = "inline-block";
-      //   });
-      // }
-
-      // if (category.textContent === "Pattern") {
-      //   // Handle Pattern category
-      //   category.style.color = "white";
-      //   category.style.backgroundColor = "#625f5f";
-      //   document.querySelectorAll(".t1, .t4").forEach((box) => {
-      //     box.style.display = "inline-block";
-      //   });
-      // }
-
-      // if (category.textContent === "Typography") {
-      //   // Handle Typography category
-      //   category.style.color = "white";
-      //   category.style.backgroundColor = "#625f5f";
-      //   document.querySelectorAll(".t2, .t3").forEach((box) => {
-      //     box.style.display = "inline-block";
-      //   });
-      // }
     });
   });
 });
+
+// const categories = document.querySelectorAll(".category");
+// const templateBoxes = document.querySelectorAll(".template-box");
+
+// function resetStyles() {
+//   categories.forEach((cat) => {
+//     cat.style.color = "black";
+//     cat.style.backgroundColor = "#f1e7dd";
+//   });
+// }
+
+// function hideAllTemplateBoxes() {
+//   templateBoxes.forEach((box) => {
+//     box.style.display = "none";
+//   });
+// }
+
+// function showSelectedCategory(category) {
+//   category.style.color = "white";
+//   category.style.backgroundColor = "#cfb79e";
+//   const className = category.id.toLowerCase();
+//   const selectedTemplates = document.querySelectorAll(`.${className}`);
+
+//   selectedTemplates.forEach((template) => {
+//     template.style.display = "inline-block";
+//   });
+// }
+
+// function showBrandingTemplates() {
+//   resetStyles();
+//   document.querySelectorAll(".template-box").forEach((box) => {
+//     box.style.display = "none";
+//   });
+
+//   document.querySelectorAll(".t1").forEach((box) => {
+//     box.style.display = "inline-block";
+//   });
+// }
+
+// categories.forEach((category) => {
+//   category.addEventListener("click", function () {
+//     resetStyles();
+//     hideAllTemplateBoxes();
+
+//     if (category.textContent === "All Designs") {
+//       resetStyles();
+//       hideAllTemplateBoxes();
+//       templateBoxes.forEach((box) => {
+//         box.style.display = "inline-block";
+//       });
+//     } else {
+//       showSelectedCategory(category);
+//     }
+
+//     if (category.id === "Branding") {
+//       showBrandingTemplates();
+//     }
+//   });
+// });
+
+// if (category.textContent === "Illustration") {
+//   // Handle Illustration category
+//   category.style.color = "white";
+//   category.style.backgroundColor = "#625f5f";
+//   document.querySelectorAll(".t3, .t5").forEach((box) => {
+//     box.style.display = "inline-block";
+//   });
+// }

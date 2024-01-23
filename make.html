@@ -9,8 +9,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap"
       rel="stylesheet"
@@ -49,6 +51,9 @@
     />
 
     <div id="menu" class="animate__fadeInDown">
+      <button id="home" class="btn" onclick="window.location.href='index.html'">
+        Home
+      </button>
       <button
         id="about"
         class="btn"
@@ -63,19 +68,6 @@
       >
         Contact
       </button>
-
-      <div class="search">
-        <input type="text" class="search__input" placeholder="Search" />
-        <button class="search__button">
-          <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
-            <g>
-              <path
-                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-              ></path>
-            </g>
-          </svg>
-        </button>
-      </div>
     </div>
 
     <div>
@@ -88,17 +80,17 @@
 
     <div class="categories">
       <button class="category" id="all">All Designs</button>
-      <button class="category" id="Branding">Branding</button>
-      <button class="category" id="Illustration">Illustration</button>
-      <button class="category" id="UI">Mobile/Web UI</button>
-      <button class="category" id="Pattern">Pattern</button>
-      <button class="category" id="Typography">Typography</button>
+      <button class="category" id="branding">Branding</button>
+      <button class="category" id="illustration">Illustration</button>
+      <button class="category" id="uI">Mobile/Web UI</button>
+      <button class="category" id="pattern">Pattern</button>
+      <button class="category" id="typography">Typography</button>
     </div>
 
     <div class="template-box">
       <!-- template1 -->
       <svg
-        class="t1 boxes template"
+        class="branding boxes template"
         xmlns="http://www.w3.org/2000/svg"
         width="550"
         viewBox="0 0 2175 1750"
@@ -230,8 +222,7 @@
       </svg>
       <!-- template2 -->
       <svg
-        class="t2 boxes template"
-        id="t2"
+        class="pattern boxes template"
         xmlns="http://www.w3.org/2000/svg"
         width="570"
         height="420"
@@ -288,8 +279,7 @@
 
       <!-- template3 -->
       <svg
-        class="t3 boxes template"
-        id="t3"
+        class="illustration boxes template"
         xmlns="http://www.w3.org/2000/svg"
         width="570"
         height="422"
@@ -398,8 +388,7 @@
 
       <!-- template4 -->
       <svg
-        class="t4 boxes template"
-        id="t4"
+        class="typography boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
@@ -457,8 +446,7 @@
 
       <!-- template5 -->
       <svg
-        class="t5 boxes template"
-        id="t5"
+        class="illustration boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
@@ -536,7 +524,8 @@
 
       <!-- template6 -->
       <svg
-        class="t6 boxes template"
+        id="branding2"
+        class="branding boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
@@ -804,8 +793,7 @@
 
       <!-- template7 -->
       <svg
-        class="t7 boxes template"
-        id="t7"
+        class="typography boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
@@ -917,8 +905,7 @@
 
       <!-- template8 -->
       <svg
-        class="t8 boxes template"
-        id="t8"
+        class="pattern boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
@@ -1004,8 +991,7 @@
 
       <!-- template9 -->
       <svg
-        class="t9 boxes template"
-        id="t9"
+        class="uI boxes template"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         width="570"
